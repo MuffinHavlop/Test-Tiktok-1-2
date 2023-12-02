@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Do you like me?</title>
+</head>
+<body>
+  <div id="grand-container">
+    <h1><strong>Cậu đồng ý làm ngyeu tớ nhéee >.<</strong></h1>
+    <div id = "button-container-1">
+    <button type="button" id="yes"><a href="accept.html"><strong>Okk</strong></a></button>
+    </div>
+    <div id = "button-container-2">
+    <button type="button" id="no"><strong>Hok</strong></button>
+    </div>
+  </div>
+  <style>
+    body{
+      background-color: #2b2c2c;
+    }
+    *{
+      font-family: 'Courier New', Courier, monospace;
+    }
+    a{
+      text-decoration: none;
+    }
+    h1{
+      text-align: center;
+      font-size: 60px;
+      color: rgb(184, 183, 183);
+    }
+    #button-container-1{
+      margin-left: 25%;
+    }
+    a{
+      text-decoration: none;
+    }
+    a:visited{
+      color: white;
+    }
+    button{
+      border-radius: 30px;
+      width: 150px;
+      height: 100px;
+      font-size: 30px;
+    }
+    #yes {
+      background-color: #04AA6D; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    #no {
+      background-color: rgb(240, 5, 5); /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    #button-container-2{
+      margin-left: 65%;
+      margin-top: -100px;
+    }
+    #grand-container{
+      margin-top: 15%;
+    }
+  </style>
+
+  <script>
+    // Thay đổi nội dung của heading khi nhấn nút "yes"
+    const yesButton = document.getElementById("yes");
+    const heading = document.querySelector("h1");
+
+    yesButton.addEventListener("click", function() {
+      heading.textContent = "A cx yêu em";
+    });
+
+    // Di chuyển nút "no" khi hover chuột qua nó
+    const noButton = document.getElementById("no");
+
+    // Hàm để di chuyển nút "no"
+    function moveNoButton() {
+      // Tạo một vị trí ngẫu nhiên cho nút "no"
+      x = Math.floor(Math.random() * document.documentElement.scrollWidth);
+      y = Math.floor(Math.random() * document.documentElement.scrollHeight);
+      if (x>1500){
+        x = x - 900;
+      }
+      if (x<0){
+        x = 50;
+      }
+      if (y>800){
+        y = y - 900;
+      }
+      if (y<0){
+        y = 50;
+      }
+
+      // Di chuyển nút "no" đến vị trí ngẫu nhiên đó
+      noButton.style.position = "absolute";
+      noButton.style.left = x + "px";
+      noButton.style.top = y + "px";
+
+    }
+
+    noButton.addEventListener("mouseover", moveNoButton);
+  </script>
+</body>
+</html>
